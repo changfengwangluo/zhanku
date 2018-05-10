@@ -91,8 +91,10 @@ ITEM_PIPELINES = {
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
+#自定义配置
+FEED_EXPORT_ENCODING = 'utf-8'
 
-
+#和django项目融合的配置
 from django.core.wsgi import get_wsgi_application
 
 DJANGO_PROJECT_PATH = '/home/lishan/PycharmProjects/zhanku'#django项目目录

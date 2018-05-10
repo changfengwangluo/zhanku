@@ -10,6 +10,6 @@ class RobotPipeline(object):
     def process_item(self, item, spider):
         domain_name=item['domain_name']
         result=WebInfo.objects.filter(domain_name=domain_name).first()
-        if result == None:
-            WebInfo.objects.create(name=item['name'],domain_name=item['domain_name'])
+        if result is None:
+            WebInfo.objects.create(domain_name=item['domain_name'],title=item['title'],keywords=item['keywords'],desc= item['desc'])
         return item

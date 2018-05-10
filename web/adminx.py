@@ -3,6 +3,8 @@ import xadmin
 # Register your models here.
 from xadmin import views
 from . import models
+
+
 class BaseSetting(object):
     enable_themes=True
     use_bootswatch=True
@@ -18,8 +20,8 @@ xadmin.site.register(views.CommAdminView,GlobalSettings)
 
 
 class WebInfoAdmin(object):
-    list_display=['name','domain_name']
-    search_fields=['name','domain_name']
-    list_filter=['name','domain_name']
+    list_display=['domain_name','title','keywords','desc']
+    search_fields=['domain_name','title','keywords','desc']
+    list_filter=['domain_name','title','keywords','desc']
 
 xadmin.site.register(models.WebInfo,WebInfoAdmin)
