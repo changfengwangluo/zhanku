@@ -24,7 +24,7 @@ SECRET_KEY = '8*5%o)iubci(3w5=wb8lf!rstpo9_qs=9y1t0%@9pk_w8grngu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*',]
+ALLOWED_HOSTS = ['*', ]
 
 # Application definition
 
@@ -68,6 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
             ],
         },
     },
@@ -82,8 +83,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        # 'HOST': '106.14.213.123',
-        'HOST': '127.0.0.1',
+        'HOST': '106.14.213.123',
+        # 'HOST': '127.0.0.1',
         'PORT': '3306',
         'NAME': 'zhanku',
         'USER': 'root',
@@ -131,4 +132,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static_assets")#django项目所有的静态文件搜集到这里。
+STATIC_ROOT = os.path.join(BASE_DIR, "static_assets")  # django项目所有的静态文件搜集到这里。
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

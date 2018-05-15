@@ -7,9 +7,12 @@
 
 import scrapy
 from scrapy_djangoitem import DjangoItem
-from web.models import WebInfo
+from web.models import WebInfo,Keywords
 class RobotItem(DjangoItem):
     # define the fields for your item here like:
     # name = scrapy.Field()
     django_model = WebInfo
+
+class KeywordsItem(DjangoItem):
+    django_model = Keywords
 

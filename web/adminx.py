@@ -25,3 +25,17 @@ class WebInfoAdmin(object):
     list_filter=['domain_name','title','keywords','desc']
 
 xadmin.site.register(models.WebInfo,WebInfoAdmin)
+
+class KeywordsAdmin(object):
+    list_display=['keyword']
+    search_fields=['keyword']
+    list_filter=['keyword']
+
+xadmin.site.register(models.Keywords,KeywordsAdmin)
+
+class SearchsAdmin(object):
+    list_display=['keyword']
+    search_fields=['keyword']
+    list_filter=['keyword']
+
+xadmin.site.register(models.Searchs,SearchsAdmin)
