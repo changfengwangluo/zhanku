@@ -17,12 +17,12 @@ from django.contrib import admin
 from django.urls import path,include
 import xadmin
 from web import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('xadmin/', xadmin.site.urls),
-    path('', views.index),
-    path('list', views.list),
-    path('info', views.info),
+    path('', views.index),#首页
+    path('web/',include('web.urls'))
 
 
 ]

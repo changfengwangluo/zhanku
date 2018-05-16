@@ -15,7 +15,7 @@ import time,os,re,hashlib,random,cv2
 class Hao123Spider(scrapy.Spider):
     name = 'hao123'
     # allowed_domains = ['www.hao123.com']
-    start_urls = ['www.hao123.com']
+    start_urls = ['http://www.0430.com']
 
     def parse(self, response):
         #result=re.findall(ur'[\u4e00-\u9fa5]',test.decode('utf-8'))
@@ -34,16 +34,18 @@ class Hao123Spider(scrapy.Spider):
             item = RobotItem()
             item['domain_name'] = 'http://www.' + tldextract.extract(url=response.url).registered_domain
             item['title'] =  response.xpath('//title/text()').extract_first()
-            metas = response.xpath('//meta').extract()
-            for meta in metas:
-                meta = meta.replace('"', '#')  # 替换双引号
-                meta = meta.replace("'", '#')  # 替换单引号
-                meta = meta.replace(' ', '')  # 去除所有空格
-                meta = meta.lower()  # 转小写
-                if meta.find('keyword') > 0 and meta.find('content') > 0:
-                    item['keywords'] = re.findall('content=#(.*?)#',meta)[0]#关键词
-
-                if meta.find('description') > 0 and meta.find('content') > 0:
-                    item['desc'] = re.findall('content=#(.*?)#',meta)[0]#描述
-
-            yield item
+            item['keywords']=''
+            item['desc']=''
+            # metas = response.xpath('//meta').extract()
+            # for meta in metas:
+            #     meta = meta.replace('"', '#')  # 替换双引号
+            #     meta = meta.replace("'", '#')  # 替换单引号
+            #     meta = meta.replace(' ', '')  # 去除所有空格
+            #     meta = meta.lower()  # 转小写
+            #     if meta.find('keyword') > 0 and meta.find('content') > 0:
+            #         item['keywords'] = re.findall('content=#(.*?)#',meta)[0]#关键词
+            #
+            #     if meta.find('description') > 0 and meta.find('content') > 0:
+            #         item['desc'] = re.findall('content=#(.*?)#',meta)[0]#描述
+            if item['title'] is not None:
+                yield item

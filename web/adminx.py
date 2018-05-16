@@ -33,6 +33,7 @@ class KeywordsAdmin(object):
 
 xadmin.site.register(models.Keywords,KeywordsAdmin)
 
+
 class SearchsAdmin(object):
     list_display=['keyword']
     search_fields=['keyword']

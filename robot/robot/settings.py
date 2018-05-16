@@ -24,7 +24,7 @@ NEWSPIDER_MODULE = 'robot.spiders'
 ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 16
+CONCURRENT_REQUESTS = 100
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay
@@ -68,7 +68,7 @@ CONCURRENT_REQUESTS = 16
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'robot.pipelines.RobotPipeline': 300,
-   'robot.pipelines.KeywordsPipeline': 301,
+   # 'robot.pipelines.KeywordsPipeline': 301,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -104,3 +104,4 @@ DJANGO_SETTINGS_MODULE = 'zhanku.settings'#django的settings文件。
 sys.path.insert(0, DJANGO_PROJECT_PATH)
 os.environ['DJANGO_SETTINGS_MODULE'] = DJANGO_SETTINGS_MODULE
 application = get_wsgi_application()
+
