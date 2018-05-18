@@ -69,6 +69,7 @@ CONCURRENT_REQUESTS = 100
 ITEM_PIPELINES = {
    'robot.pipelines.RobotPipeline': 300,
    # 'robot.pipelines.KeywordsPipeline': 301,
+   'robot.pipelines.MysqlTwistedPipeline':302,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -105,3 +106,8 @@ sys.path.insert(0, DJANGO_PROJECT_PATH)
 os.environ['DJANGO_SETTINGS_MODULE'] = DJANGO_SETTINGS_MODULE
 application = get_wsgi_application()
 
+#异步数据库配置
+MYSQL_HOST='106.14.213.123'
+MYSQL_DBNAME='zhanku'
+MYSQL_USER='root'
+MYSQL_PASSWORD='lishan0623'
