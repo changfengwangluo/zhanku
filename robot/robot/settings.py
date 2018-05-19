@@ -69,7 +69,7 @@ CONCURRENT_REQUESTS = 100
 ITEM_PIPELINES = {
    'robot.pipelines.RobotPipeline': 300,
    # 'robot.pipelines.KeywordsPipeline': 301,
-   'robot.pipelines.MysqlTwistedPipeline':302,
+   'robot.pipelines.AsyncioPipeline':302,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

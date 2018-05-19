@@ -9,12 +9,28 @@ import re
 from twisted.enterprise import adbapi
 from . import settings
 import pymysql
+import asyncio
 
 class RobotPipeline(object):
     def process_item(self, item, spider):
         # WebInfo.objects.create(domain_name=item['domain_name'], title=item['title'], keywords=item['keywords'],
         # desc=item['desc'])
         return item
+
+class AsyncioPipeline(object):
+
+
+
+    def process_item(self, item, spider):
+        # 执行coroutine
+        loop = asyncio.get_event_loop()
+        loop.run_until_complete(self.do_insert(item=item))
+        ollp.close()
+        return item
+
+    def do_insert(self,item):
+        WebInfo.objects.create(domain_name=item['domain_name'], title=item['title'], keywords=item['keywords'],
+                               desc=item['desc'])
 
 
 # 异步插入数据
