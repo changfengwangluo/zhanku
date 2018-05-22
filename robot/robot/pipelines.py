@@ -19,8 +19,6 @@ class RobotPipeline(object):
 
 class AsyncioPipeline(object):
 
-
-
     def process_item(self, item, spider):
         # 执行coroutine
         loop = asyncio.get_event_loop()

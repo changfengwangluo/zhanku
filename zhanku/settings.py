@@ -31,12 +31,15 @@ ALLOWED_HOSTS = ['*', ]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
-    'django.contrib.contenttypes',
+    'django.contrib.contenttypes',#记录项目所有模型
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 自定义app
     'web',
+    'user',
+    'comment',
+
     # xadmin
     'xadmin',
     'crispy_forms',

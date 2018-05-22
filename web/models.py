@@ -1,7 +1,9 @@
 from django.db import models
 from datetime import datetime
 # Create your models here.
-from django.contrib.auth.models import User
+from user.models import UserProfile
+from django.contrib.contenttypes.models import ContentType
+
 
 class WebInfo(models.Model):
 
@@ -10,7 +12,10 @@ class WebInfo(models.Model):
     keywords = models.TextField(verbose_name='网站关键词', max_length=255, default='')
     desc = models.TextField(verbose_name='网站描述', max_length=255, default='')
     create_time=models.DateField(verbose_name='收录时间',default=datetime.now)
-    # user=models.ForeignKey(User,on_delete=models.DO_NOTHING)#关联用户
+    readnum=models.IntegerField(verbose_name='人气',default=0)
+
+
+
     class Meta:
         verbose_name='网站信息'
         verbose_name_plural=verbose_name
@@ -37,3 +42,5 @@ class Searchs(models.Model):
 
     def __str__(self):
         return self.keyword
+
+

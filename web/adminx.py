@@ -40,3 +40,4 @@ class SearchsAdmin(object):
     list_filter=['keyword']
 
 xadmin.site.register(models.Searchs,SearchsAdmin)
+

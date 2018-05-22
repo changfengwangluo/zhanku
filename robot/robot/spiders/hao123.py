@@ -2,13 +2,8 @@
 import scrapy
 import tldextract
 from robot.items import RobotItem
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
 from zhanku import settings
-import time,os,re,hashlib,random,cv2
+import time,os,re,random
 
 
 
